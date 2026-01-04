@@ -1,3 +1,11 @@
+.homeContainer {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #0b1220;
+  margin: 0;
+  padding: 0;
+}
+
 .addToCarticon {
   position: fixed;
   bottom: 50%;

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import {
   BsFillMenuButtonWideFill,
   BsCart4,
@@ -11,7 +13,7 @@ import styles from "./index.module.css";
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div>
+    <div className={styles.homeContainer}>
       <div className={styles.addToCarticon}>
         <button type="button" className={styles.cartLink}>
           <BsCart4 className={styles.Icon} />
@@ -303,7 +305,7 @@ const Home = () => {
       </section>
       <section className={styles.featuresSection} id="Features">
         <h2 className={styles.featuresTitle}>Features</h2>
-        <Carousel className={styles.carouselContainer}>
+        <Carousel slide={false} className={styles.carouselContainer}>
           <Carousel.Item>
             <img
               className={styles.carouselImage}
