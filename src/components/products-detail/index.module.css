@@ -1,0 +1,397 @@
+.nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #333;
+  padding: 0 20px;
+  color: white;
+  z-index: 2000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.menuBtn {
+  display: none;
+}
+
+.loginBtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.loginBtn:hover {
+  background-color: #45a049;
+}
+
+.signUpBtn {
+  background-color: #008cba;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.signUpBtn:hover {
+  background-color: #007bb5;
+}
+
+@media (max-width: 900px) {
+  .links {
+    display: none;
+  }
+
+  .loginBtn {
+    display: none;
+  }
+
+  .signUpBtn {
+    display: none;
+  }
+
+  .menuBtn {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+/* Mobile / toggle menu */
+.menuBtn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px;
+}
+.mobileMenu {
+  position: absolute;
+  top: 64px;
+  right: 20px;
+  width: 260px;
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+  padding: 12px;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  pointer-events: none;
+  transition: all 160ms ease;
+  z-index: 1500;
+}
+
+/* prevent fixed nav from covering content */
+.pageWrapper {
+  padding-top: 60px;
+}
+.mobileMenuOpen {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.mobileMenuItem {
+  display: block;
+  padding: 10px 8px;
+  color: #0b1220;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+.mobileMenuItem:hover {
+  background: #f3f4f6;
+}
+.mobileMenuButtons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  justify-content: left;
+}
+
+/* Ensure header buttons inside the mobile menu are visible even on small screens */
+.mobileMenuButtons .loginBtn,
+.mobileMenuButtons .signUpBtn {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 15px;
+}
+.productDetail {
+  padding: 20px;
+  max-width: 800px;
+  margin: 60px auto 0 auto;
+}
+.productTitle {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.productImage {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.productDescription {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+.productPrice {
+  font-size: 1.5rem;
+  color: #e91e63;
+  margin-top: 10px;
+}
+.addToCartButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  border-radius: 8px;
+  margin-right: 6px;
+}
+.addToCartButton:hover {
+  background-color: #45a049;
+}
+.buyNowButton {
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+.buyNowButton:hover {
+  background-color: #e64a19;
+}
+.backLink {
+  color: #2196f3;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-left: 80%;
+  cursor: pointer;
+}
+.backLink:hover {
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .productDetail {
+    padding: 10px;
+  }
+  .productTitle {
+    font-size: 1.5rem;
+  }
+  .productDescription {
+    font-size: 1rem;
+  }
+  .productPrice {
+    font-size: 1.2rem;
+  }
+  .addToCartButton {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 60px 20px 20px;
+  margin-top: 60px;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footerCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerCol h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: #ffffff;
+}
+
+.footerCol p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cccccc;
+  margin: 0 0 16px;
+}
+
+.footerCol ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerCol ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footerCol ul li a,
+.footerCol ul li {
+  color: #cccccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerCol ul li a:hover {
+  color: #4caf50;
+}
+
+.contactInfo {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.contactInfo li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cccccc;
+  margin-bottom: 10px !important;
+  font-size: 14px;
+}
+
+.contactInfo li i {
+  color: #4caf50;
+  width: 20px;
+}
+
+.footerSocial {
+  display: flex;
+  gap: 12px;
+}
+
+.footerSocial div {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #333333;
+  border-radius: 50%;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footerSocial div:hover {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.footerSocial i {
+  font-size: 16px;
+}
+
+.footerBottom {
+  border-top: 1px solid #333333;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerBottom p {
+  font-size: 14px;
+  color: #999999;
+  margin: 0;
+}
+
+.paymentMethods {
+  display: flex;
+  gap: 15px;
+}
+
+.paymentMethods img {
+  height: 28px;
+  width: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.paymentMethods img:hover {
+  opacity: 1;
+}
+
+.socialImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Responsive Footer */
+@media (max-width: 900px) {
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 15px 15px;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .paymentMethods {
+    justify-content: center;
+  }
+}
