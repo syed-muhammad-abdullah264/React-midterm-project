@@ -430,6 +430,16 @@
   background-color: #28a745;
   }
 
+  
+/* @media (max-width: 900px) {
+  .productDetailsLink{
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+} */
+
 .addToCartBtn {
   background-color: #ff6b6b;
   color: #fff;
@@ -445,6 +455,12 @@
   background-color: #ee5252;
 }
 
+/* @media (max-width: 900px) {
+
+  .addToCartBtn{
+    width: 100%;
+  }
+} */
 .cartBtnIcon {
   font-size: 16px;
   margin-right: 8px;
