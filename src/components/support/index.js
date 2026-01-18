@@ -5,6 +5,23 @@ import styles from "./index.module.css";
 
 function Support() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+   const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    formData.append("access_key", "f0c96f85-78cd-4372-8fd3-7ef9caab9171");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    setResult(data.success ? "Success!" : "Error");
+  };
+
   return (
     <>
       <nav className={styles.nav}>
@@ -78,11 +95,13 @@ function Support() {
         <form
           className={styles["support-form"]}
           aria-label="Support contact form"
+          onSubmit={onSubmit}
         >
           <label className={styles["form-label"]}>
             Name
             <input
               className={styles["form-input"]}
+              name="name"
               type="text"
               required
               aria-required="true"
@@ -93,6 +112,7 @@ function Support() {
             Email
             <input
               className={styles["form-input"]}
+              name="email"
               type="email"
               required
               aria-required="true"
@@ -103,6 +123,7 @@ function Support() {
             Message
             <textarea
               className={styles["form-textarea"]}
+              name="message"
               rows={6}
               required
               aria-required="true"
@@ -123,6 +144,7 @@ function Support() {
             >
               Open Email Client
             </button>
+            <p>{result}</p>
           </div>
         </form>
       </main>
